@@ -289,7 +289,8 @@ public class VanillaChronicle implements Chronicle {
         SECONDS("yyyyMMddHHmmss", 1000, 1L << 28),
         MINUTES("yyyyMMddHHmm", 60 * 1000, 1L << 34),
         HOURS("yyyyMMddHH", 60 * 60 * 1000, 1L << 40),
-        DAYS("yyyyMMdd", 24 * 60 * 60 * 1000, 1L << 40),;
+        DAYS("yyyyMMdd", 24 * 60 * 60 * 1000, 1L << 40),
+        ;
 
         private static Cycle[] VALUES = values();
 

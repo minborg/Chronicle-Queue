@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author luke
- *         Date: 4/7/15
+ * Date: 4/7/15
  */
 //@Ignore
 public class VanillaBlockSizeTest extends VanillaChronicleTestBase {

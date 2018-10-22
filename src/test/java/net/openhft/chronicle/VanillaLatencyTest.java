@@ -47,7 +47,7 @@ import java.util.Random;
 
 /**
  * @author luke
- *         Date: 4/7/15
+ * Date: 4/7/15
  */
 @Ignore
 public class VanillaLatencyTest {

@@ -34,11 +34,11 @@ import java.io.IOException;
 
 /**
  * @author ygokirmak
- *         <p>
- *         This is just a simple try for a cache implementation
- *         Future Improvements
- *         1- Test multiple writer concurrency and performance
- *         2- Support variable size objects.
+ * <p>
+ * This is just a simple try for a cache implementation
+ * Future Improvements
+ * 1- Test multiple writer concurrency and performance
+ * 2- Support variable size objects.
  */
 public class ExampleCache2Main {
     private static final String TMP = System.getProperty("java.io.tmpdir");

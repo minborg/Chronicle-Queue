@@ -32,10 +32,10 @@ import java.util.Arrays;
 
 /**
  * @author peter.lawrey
- *         <p>
- *         Chronicle 1.7: 50.0% took 0.3 µs,  90.0% took 0.4 µs,  99.0% took 33.5 µs,  99.9% took 66.9 µs,  99.99% took
- *         119.7 µs,  worst took 183 µs Chronicle 2.0: 50.0% took 0.13 µs, 90.0% took 0.15 µs, 99.0% took 0.44 µs, 99.9%
- *         took 14.37 µs, 99.99% took 22.16 µs, worst took 40 µs
+ * <p>
+ * Chronicle 1.7: 50.0% took 0.3 µs,  90.0% took 0.4 µs,  99.0% took 33.5 µs,  99.9% took 66.9 µs,  99.99% took
+ * 119.7 µs,  worst took 183 µs Chronicle 2.0: 50.0% took 0.13 µs, 90.0% took 0.15 µs, 99.0% took 0.44 µs, 99.9%
+ * took 14.37 µs, 99.99% took 22.16 µs, worst took 40 µs
  */
 public class ExampleRewriteMain {
     public static void main(String... ignored) throws IOException {
@@ -95,7 +95,7 @@ public class ExampleRewriteMain {
         int[] times = new int[repeats];
         for (int count = -warmup; count < repeats; count++) {
             do {
-            /* busy wait */
+                /* busy wait */
             } while (!excerpt.nextIndex());
             final long timestamp = excerpt.readLong();
             long time = System.nanoTime() - timestamp;
