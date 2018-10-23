@@ -78,6 +78,12 @@
 
         <!-- for testing -->
         <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>chronicle-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <scope>test</scope>
