@@ -1,5 +1,8 @@
-package net.openhft.chronicle;
+package net.openhft.chronicle.bench;
 
+import net.openhft.chronicle.Chronicle;
+import net.openhft.chronicle.ExcerptAppender;
+import net.openhft.chronicle.ExcerptTailer;
 import net.openhft.chronicle.core.OS;
 import net.openhft.chronicle.core.io.IOTools;
 import net.openhft.chronicle.core.util.Histogram;
