@@ -16,6 +16,11 @@ import java.util.function.IntConsumer;
  * <p>
  * Alternatively, the {@code shutdown()} method can be called to close the supplied queue and release any other resources.
  * Invocation of the {@code execute()} method after {@code shutdown()} has been called with cause an {@code IllegalStateException} to be thrown.
+ *
+ * From a performance prospective,  for best results you should have the pretoucher running in a separate process.
+ * Isolating the pretoucher to its own process helps to limit any stalls that are caused by the pretoucher,
+ * to its own process and not your main application. You should avoid having a pretoucher process, per queue,
+ * Ideally you should have just one pretoucher process for all your queues.
  */
 public final class Pretoucher {
     private final SingleChronicleQueue queue;
