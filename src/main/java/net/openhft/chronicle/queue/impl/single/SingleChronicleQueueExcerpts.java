@@ -267,6 +267,8 @@ public class SingleChronicleQueueExcerpts {
         }
 
         private void setCycle2(int cycle, boolean createIfAbsent) {
+            new RuntimeException("wire=" + wire + ", store=" + store+", cycle="+cycle+", this.cycle="+this.cycle).printStackTrace();
+
             if (cycle < 0)
                 throw new IllegalArgumentException("You can not have a cycle that starts " +
                         "before Epoch. cycle=" + cycle);
