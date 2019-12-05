@@ -12,6 +12,7 @@ public interface CycleCalculator {
      * @param timeProvider to apply for calculation
      * @param offsetMillis to offset (subtract) from the current time before calculation.
      * @return Returns the current cycle for the given parameters
+     * @throws NullPointerException if any of the provided parameters are {@code null}
      */
     int currentCycle(RollCycle rollCycle, TimeProvider timeProvider, long offsetMillis);
 }
