@@ -26,6 +26,13 @@ import java.text.ParseException;
 
 public interface RollingChronicleQueue extends ChronicleQueue, StoreReleasable {
 
+    /**
+     * Returns the number of milliseconds within a day, for which rolling shall occur.
+     * <p>
+     * A value of 17 * 60 * 60 * 1,000 = 61,200,000 means rolling occurs at 5 PM.
+     *
+     * @return the number of milliseconds within a day, for which rolling shall occur
+     */
     long epoch();
 
     /**
@@ -40,19 +47,23 @@ public interface RollingChronicleQueue extends ChronicleQueue, StoreReleasable {
     WireStore storeForCycle(int cycle, final long epoch, boolean createIfAbsent);
 
     /**
+     * Returns the first cycle number found, or Integer.MAX_VALUE is none found
+     *
      * @return the first cycle number found, or Integer.MAX_VALUE is none found.
      */
     int firstCycle();
 
     /**
+     * Returns the lastCycle available or Integer.MIN_VALUE if none is found
+     *
      * @return the lastCycle available or Integer.MIN_VALUE if none is found.
      */
     int lastCycle();
 
     /**
-     * Counts the number of messages in this queue instance.
+     * Returns the number of document excerpts (messages) in this queue instance.
      *
-     * @return the number of document excerpts
+     * @return the number of document excerpts (messages) in this queue instance
      */
     long entryCount();
 
@@ -87,27 +98,40 @@ public interface RollingChronicleQueue extends ChronicleQueue, StoreReleasable {
     long countExcerpts(long fromIndex, long toIndex) throws java.lang.IllegalStateException;
 
     /**
+     * Returns the current cycle.
+     *
      * @return the current cycle
      */
     int cycle();
 
     /**
+     * Returns the number of entries in an index meta data entry.
+     *
      * @return the number of entries in an index meta data entry
      */
     int indexCount();
 
     /**
-     * @return the spacing between indexed entries. If 1 then every entry is indexed.
+     * Returns the index spacing between indexed entries.
+     * <p>
+     * If 1 then every entry is indexed.
+     *
+     * @return the spacing between indexed entries
      */
     int indexSpacing();
 
+    /**
+     * {@inheritDoc}
+     */
     @NotNull
     RollCycle rollCycle();
 
-    /**
-     * @return the checkpointInterval used by delta wire
-     */
-    int deltaCheckpointInterval();
 
+    /**
+     * Returns the {@link QueueLock} for this RollingChronicleQueue.
+     *
+     * @return the {@link QueueLock} for this RollingChronicleQueue
+     */
+    @NotNull
     QueueLock queueLock();
 }

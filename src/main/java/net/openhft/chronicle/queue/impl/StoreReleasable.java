@@ -18,7 +18,10 @@
 package net.openhft.chronicle.queue.impl;
 
 public interface StoreReleasable {
+
     /**
+     * Releases any resources held by the provided {@code store}.
+     *
      * @param store the {@code store} to release
      */
     void release(CommonStore store);
